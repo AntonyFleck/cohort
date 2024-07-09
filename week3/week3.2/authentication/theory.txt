@@ -1,0 +1,19 @@
+1)Hashing
+2)Encryption
+3)JSON web Tokens
+4)Local Storage
+
+The web token that is returned by the chat gpt server stays in the local storage of the browser
+util the user log outs
+So the front end coeders write the logic to pick up the token and send it to the server for verification
+
+
+--------------------*****---------------------
+MongoDB is a noSQL database
+In each DB it lets you create tables(collections)
+In eacch table it lets you dump JSON database
+It is schemaless
+It scales well and is a decent choice for most use cases
+
+ZOD
+REFRESH AND ACCESS Tokens

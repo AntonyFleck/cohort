@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <input type="text" id="title" placeholder="title"></input><br></br>
+    <input type="text" id="description" placeholder="description"></input><br></br>
+    <button onclick="addToDo()" id="button">Add Todo</button>
+</body>
+<div id="container"></div>
+<script>
+    let id=1
+    function markasDone(id){
+        document.getElementById(id).children[2].innerHTML="done"
+    }
+    function create(title,description,id){
+        const outerdiv=document.createElement("div")
+        const child1=document.createElement("div")
+        const child2=document.createElement("div")
+        const child3=document.createElement("button")
+        child1.innerHTML=title
+       child2.innerHTML=description
+        child3.setAttribute("onclick",`markasDone(${id})`)
+        child3.innerHTML="click"
+        outerdiv.appendChild(child1)
+        outerdiv.appendChild(child2)
+        outerdiv.appendChild(child3)
+        outerdiv.setAttribute("id",id)
+        return outerdiv
+    }
+    async function addToDo(){
+        const title=document.getElementById("title").value
+        const description=document.getElementById("description").value
+        const parent=document.getElementById("container")
+        parent.appendChild(create(title,description,id++)) 
+        let sent={
+            title:title,
+            description:description,
+            id:id-1
+        };
+            const result=await fetch("http://localhost:3000/getSTATE2",{
+            method:"POST",
+            mode: "cors",
+            credentials: "same-origin",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            redirect: "follow",
+            referrerPolicy: "no-referrer",
+            body:JSON.stringify(sent)
+        });
+        const data=await result.text();
+        console.log(data);
+    }
+    function updateDOMbySTATE(state){
+        const container=document.getElementById("container")
+        container.innerHTML="";
+        for(let i=0;i<state.length;i++){
+            const child=create(state[i].title,state[i].description,state[i].id);
+            container.appendChild(child);
+        }
+    }
+    async function higher(){
+    const result=await fetch("http://localhost:3000/getSTATE",{mode: "cors",});
+    const data=await result.json();
+    id=data.length+1;
+    updateDOMbySTATE(data);
+    }
+    higher();
+    // updateDOMbySTATE([
+    //     {
+    //         title:"fuck ambesha",
+    //         description:"harder",
+    //         id:1
+    //     },
+    //     {
+    //         title:"Go to gym",
+    //         description:"harder",
+    //         id:2
+    //     },
+    //     {
+    //         title:"Go to gym",
+    //         description:"harder",
+    //         id:2
+    //     }
+
+    // ]);
+</script>
+</html>

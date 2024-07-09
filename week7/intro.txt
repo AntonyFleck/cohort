@@ -1,0 +1,50 @@
+Routing,Prop Drilling,Context API
+nowadays context API is mostly not done and state management is used a lot 
+
+1)React lets you create a Single Page Application
+2)Client side bundle --->All code of your Application
+3)Client side Routing
+
+http;//localhost:3000/asd
+
+Prop Drilling
+just how ugly it looks 
+it is just a syntactical menace when a children has to passed
+down the tree when it has to used somewhere down the line
+
+
+ (needs to be stored)    and passed along the right tree down 
+ /\
+(*)()
+   /\
+  () (*)
+
+Lazy loading
+giving them html incrementally
+that is lazyly loading bundle components
+for lazy loading your components must be exported by default
+
+
+The Context API lets you fix prop Drilling
+
+-)if you use the context API you're pushing your state management logic
+outside the code react components
+
+
+the context API does not fix the re-rendering problem 
+
+
+RECOIL and SELECTORS
+
+atoms lets you define state variable in the recoil world 
+key for every atom must be unique
+
+@@ recoil assignment hard lecture 7.2 1:15:00
+look at it 
+ 
+----------------------------** 7.4 **---------------------------
+no need to watch till 22 mins
+
+ADVANCE:-
+
+1)Asynchronousdata queries:-

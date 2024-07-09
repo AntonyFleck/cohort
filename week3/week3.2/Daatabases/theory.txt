@@ -1,0 +1,4 @@
+Only the backend servers can access a database the browser cant
+
+How does the backend connect to database Basically it uses libraries
+eg mongoose

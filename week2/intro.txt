@@ -1,0 +1,25 @@
+ECMA script is a scripting language specification on which Java Script is based.
+Also specifices things that a javaScript compiler should support
+javaScript is a scripting language that conforms to ECMA script specification
+
+==>SetTimeout and fs are web api provided by the browsers
+V8(used inside chromium) is a common javaScript compiler
+SpiderMonkey(used inside firefox) is a common javaScript compiler
+
+Node.js is an javaScript runtime
+
+what is BUN??? it is written in zig
+
+It's worth noting that app.listen() is a convenience method provided by Express, 
+and under the hood, it uses Node.js's built-in http.createServer() method to create the server.
+
+https://www.example.com:8080/path/to/resource, https is the protocol, www.example.com is the domain,
+ 8080 is the port (if specified),
+ and /path/to/resource is the path to the resource
+
+COMMANDS
+npm init -y
+npm install express
+node index.js
+npm install body-parser
+npm install zod

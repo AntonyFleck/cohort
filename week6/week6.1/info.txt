@@ -1,0 +1,26 @@
+React returns,re-rendering(when DOM updates happen)
+key
+wrapper components
+useEffect
+useMemo
+useCallbackf
+REACT-DOM
+
+MINIMizinng re renders
+1)Pushing the state down
+2)react .memo(only the children that dont have props passed)
+
+SideEffects
+e.g
+1)setTimeOut,fetch,setInterval, anything that is not a part of react rendering cycle
+
+
+Hooks=allow you to perform side effects in functional componenets introduced in React 16.8
+useState
+useEffect :-to run a certain part of code
+useCallbackf :-use to Memoizse function which are passed as children,the dependecy array changes the
+                signature of the function defined
+useMemo:-Memoization remember value of something across renders
+
+useEffect VS  useMemo IN SUM EXAMPLE
+Memoization

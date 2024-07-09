@@ -1,0 +1,35 @@
+<!-- classes and id(id's let you access elements using the DOM API )-->
+<!--To make a website dynamic you need to use javascript-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        background-color: rebeccapurple;
+        margin: 10px;
+        padding-left: 20;
+        color: green;
+    }
+</style>
+<body>
+    <div class="container">Hello</div>
+    <input type="text" id="firstnumber" placeholder="firstnumber"></input>
+    <input type="text" id="secondnumber" placeholder="secondnumber"></input>
+    <button onclick="sum()" >CalculateSum</button>
+    <div id="first"></div>
+</body>
+<script>
+    function sum(){   
+    const a=document.getElementById("firstnumber").value
+    const b=document.getElementById("secondnumber").value
+    const c=parseInt(a)+parseInt(b)
+    const element=document.getElementById("first")
+    element.innerHTML=c
+    }
+</script>
+</html>
